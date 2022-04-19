@@ -1,18 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <link rel="stylesheet" type="text/css" href="css/">   待新增 -->
-        <script type="text/javascript" src="js/map.js" defer></script>
-        <script type="text/javascript" src="js/data.js" defer></script>
-        <title>Team-13 Taiwan Weather</title>
-    </head>
-    <body>
-        <div class="container">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/cssReset.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="js/map.js" defer></script>
+    <script type="text/javascript" src="js/data.js" defer></script>
+    <script type="text/javascript" src="js/footer.js" defer></script>
+    <title>Team-13 Taiwan Weather</title>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="main">
             <div class="taiwan">HELLO Taiwan</div>
-            <div class="data"></div>
         </div>
-    </body>
+    </div>
+    <div class="container">
+        <div class="main">
+            <div class="data">
+                <div class="map">
+                    <iframe class="iframeMap" id="taiwanMap" src="taiwan_map.html" frameborder="0"
+                        scrolling="no"></iframe>
+                </div>
+
+                <div class="weather">
+                    <div class="info">
+                        <div class="weatherDescription">
+                            <h2>地點</h2>
+                            <p>天氣AAAAAAAAAAAAA</p>
+                            <p>降雨機率AAAAAAAAAAA</p>
+                            <p>最高低氣溫AAAAAAAAAA</p>
+                            <p>紫外線AAAAAAAAAAAAA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footerContent">
+            <p> WEHELP TEAM13 </p>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    document.write(taiwanMap.import.body.innerHTML);
+</script>
+
 </html>
