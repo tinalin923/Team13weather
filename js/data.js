@@ -75,40 +75,39 @@ const parseWeatherData = (response, locationIds) => {
 const showWeather = (event, data) => {
   let divId = event.currentTarget.id;
   let singleLocationData = data.filter((obj) => obj.id == divId)[0];
-  // weather是資料reder的node，可更改
-  let weather = document.querySelector("article");
+  const weatherDiv = document.getElementById("weatherDiv");
+  weatherDiv.style.visibility = "visible";
+  const weatherDesDiv = document.getElementById("weatherDescriptionDiv");
   let location = document.createElement("h2");
   location.textContent = "地點： " + singleLocationData.location;
-  weather.appendChild(location);
+  weatherDesDiv.appendChild(location);
   let weatherP = document.createElement("p");
-  weatherP.setAttribute("class", "weatherDescription");
   weatherP.textContent = "天氣： " + singleLocationData.weather;
-  weather.appendChild(weatherP);
+  weatherDesDiv.appendChild(weatherP);
   let PoP = document.createElement("p");
-  PoP.setAttribute("class", "weatherDescription");
   PoP.textContent = "降雨機率： " + singleLocationData.rainProbability + "%";
-  weather.appendChild(PoP);
+  weatherDesDiv.appendChild(PoP);
   let temperature = document.createElement("p");
-  temperature.setAttribute("class", "weatherDescription");
   temperature.textContent =
     "氣溫： " +
     singleLocationData.minTemperature +
     "~" +
     singleLocationData.maxTemperature;
-  weather.appendChild(temperature);
+  weatherDesDiv.appendChild(temperature);
   let UVI = document.createElement("p");
-  UVI.setAttribute("class", "weatherDescription");
   UVI.textContent =
     "紫外線指數： " +
     singleLocationData.UVIndex +
-    " " +
+    "   " +
     singleLocationData.exposureLevel;
-  weather.appendChild(UVI);
+  weatherDesDiv.appendChild(UVI);
 };
 const removeWeather = (event) => {
-  let weather = document.querySelector("article");
-  while (weather.firstChild) {
-    weather.removeChild(weather.firstChild);
+  const weatherDesDiv = document.getElementById("weatherDescriptionDiv");
+  const weatherDiv = document.getElementById("weatherDiv");
+  weatherDiv.style.visibility = "hidden";
+  while (weatherDesDiv.firstChild) {
+    weatherDesDiv.removeChild(weatherDesDiv.firstChild);
   }
 };
 
