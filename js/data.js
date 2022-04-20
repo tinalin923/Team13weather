@@ -79,27 +79,27 @@ const showWeather = (event, data) => {
   weatherDiv.style.visibility = "visible";
   const weatherDesDiv = document.getElementById("weatherDescriptionDiv");
   let location = document.createElement("h2");
-  location.textContent = "地點： " + singleLocationData.location;
+  location.textContent = singleLocationData.location;
   weatherDesDiv.appendChild(location);
   let weatherP = document.createElement("p");
   weatherP.textContent = "天氣： " + singleLocationData.weather;
   weatherDesDiv.appendChild(weatherP);
   let PoP = document.createElement("p");
-  PoP.textContent = "降雨機率： " + singleLocationData.rainProbability + "%";
+  PoP.textContent = "降雨機率： " + singleLocationData.rainProbability + " %";
   weatherDesDiv.appendChild(PoP);
   let temperature = document.createElement("p");
   temperature.textContent =
     "氣溫： " +
     singleLocationData.minTemperature +
-    "~" +
+    " ~ " +
     singleLocationData.maxTemperature;
   weatherDesDiv.appendChild(temperature);
   let UVI = document.createElement("p");
   UVI.textContent =
     "紫外線指數： " +
     singleLocationData.UVIndex +
-    "   " +
-    singleLocationData.exposureLevel;
+    `  ${singleLocationData.exposureLevel}`;
+
   weatherDesDiv.appendChild(UVI);
 };
 const removeWeather = (event) => {
