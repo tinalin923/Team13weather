@@ -18,7 +18,7 @@ body {
 
 .taiwan {
     margin-left: 15px;
-    font-size: 30px;
+    font-size: 25px;
     font-family: 'Noto Sans TC Bold';
 }
 
@@ -77,6 +77,8 @@ body {
 .footer {
     background-color: #564030;
     justify-content: center;
+    align-items: center;
+    display:grid;
 }
 
 .footerContent {
